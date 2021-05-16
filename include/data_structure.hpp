@@ -1,27 +1,12 @@
 #pragma once
-
+#include <vector>
+#include <string>
+#include <iostream>
 // Заголовочный файл с объявлением структуры данных
 
 namespace itis {
-
-  // Tip 1: объявите здесь необходимые структуры, функции, константы и прочее
-
-  // Пример: объявление константы времени компиляции в заголовочном файле
-  inline constexpr auto kStringConstant = "Hello, stranger!";
-
-  // Пример: объявление структуры с полями и методами
-  struct MyStructure {
-   public:
-    int size_{0};
-    int capacity_{0};
-    int* data_{nullptr};
-
-    // Tip 2: На начальном этапе разработки структуры данных можете определения методов задавать в
-    // заголовочном файле, как только работа будет завершена, можно будет оставить здесь только объявления.
-
-    int size() const {
-      return size_;
-    }
-  };
+  size_t mod2pow31sub1(size_t n);
+  size_t randsizet(size_t min, size_t max);
+  std::vector<int> search(std::string &sub, std::string &source);
 
 }  // namespace itis

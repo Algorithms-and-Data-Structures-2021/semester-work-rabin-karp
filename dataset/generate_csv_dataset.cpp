@@ -11,47 +11,114 @@ using namespace std;
 // абсолютный путь до набора данных
 static constexpr auto kDatasetPath = string_view{PROJECT_DATASET_DIR};
 
-int main(int argc, char** argv) {
 
-  // Tip 1: можете передать путь до входного/выходного файла в качестве аргумента
-  for (int index = 0; index < argc; index++) {
-    cout << "Arg: " << argv[index] << '\n';
-  }
+int main() {
+  const auto pathToDataSet = string(kDatasetPath);
 
-  const auto path = string(kDatasetPath);  // конвертация string_view в string
-  cout << "Dataset path: " << path << endl;
+  cout << "Dataset path To Data Set: " << pathToDataSet << endl;
 
-  // Пример: чтение набора данных
-  auto input_stream = ifstream(path + "/dataset-example.csv");
 
-  if (input_stream) {
-    int line_number = 0;
+  vector<string> output_streams;
+  output_streams.emplace_back("/100.csv");
+  output_streams.emplace_back("/500.csv");
+  output_streams.emplace_back("/1000.csv");
+  output_streams.emplace_back("/5000.csv");
+  output_streams.emplace_back("/10000.csv");
+  output_streams.emplace_back("/50000.csv");
+  output_streams.emplace_back("/100000.csv");
+  output_streams.emplace_back("/500000.csv");
+  output_streams.emplace_back("/1000000.csv");
 
-    // построчное чтение
-    for (string line; getline(input_stream, line); /* ... */) {
-      auto ss = stringstream(line);  // оборачиваем строку в объект "поток"
 
-      for (string token; getline(ss, token, ','); /* ... */) {
-        cout << "Token: [" << token << "] at line " << line_number << '\n';
+  vector<int> integers = {100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000};
+
+  while (!integers.empty()) {
+    auto outputStreamDataSet01 = ofstream(pathToDataSet + "/01" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet02 = ofstream(pathToDataSet + "/02" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet03 = ofstream(pathToDataSet + "/03" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet04 = ofstream(pathToDataSet + "/04" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet05 = ofstream(pathToDataSet + "/05" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet06 = ofstream(pathToDataSet + "/06" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet07 = ofstream(pathToDataSet + "/07" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet08 = ofstream(pathToDataSet + "/08" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet09 = ofstream(pathToDataSet + "/09" + output_streams.front(), ios::ios_base::trunc);
+    auto outputStreamDataSet10 = ofstream(pathToDataSet + "/10" + output_streams.front(), ios::ios_base::trunc);
+
+    const auto seed = chrono::system_clock::now().time_since_epoch().count();
+    auto engine = mt19937(seed);  // без seed`а генератор будет выдавать одни и те же значения
+    auto dist = uniform_int_distribution(0, 10000000);  // равновероятное распределение генерируемых чисел
+
+    if (outputStreamDataSet01) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet01 << dist(engine) << ',';
       }
-
-      cout << line << '\n';
-      line_number++;
+      outputStreamDataSet01 << dist(engine) << '\n';
     }
-  }
 
-  // Пример: генерация набора данных
-  auto output_stream = ofstream(path + "/dataset-generated.csv", ios::ios_base::app);
-
-  const auto seed = chrono::system_clock::now().time_since_epoch().count();
-  auto engine = mt19937(seed);  // без seed`а генератор будет выдавать одни и те же значения
-  auto dist = uniform_int_distribution(0, 10);  // равновероятное распределение генерируемых чисел
-
-  if (output_stream) {
-    for (int counter = 0; counter < 10; counter++) {
-      output_stream << dist(engine) << ',';
+    if (outputStreamDataSet02) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet02 << dist(engine) << ',';
+      }
+      outputStreamDataSet02 << dist(engine) << '\n';
     }
-    output_stream << dist(engine) << '\n';
+
+    if (outputStreamDataSet03) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet03 << dist(engine) << ',';
+      }
+      outputStreamDataSet03 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet04) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet04 << dist(engine) << ',';
+      }
+      outputStreamDataSet04 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet05) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet05 << dist(engine) << ',';
+      }
+      outputStreamDataSet05 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet06) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet06 << dist(engine) << ',';
+      }
+      outputStreamDataSet06 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet07) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet08 << dist(engine) << ',';
+      }
+      outputStreamDataSet07 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet08) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet08 << dist(engine) << ',';
+      }
+      outputStreamDataSet08 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet09) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet09 << dist(engine) << ',';
+      }
+      outputStreamDataSet09 << dist(engine) << '\n';
+    }
+
+    if (outputStreamDataSet10) {
+      for (int counter = 0; counter < integers.front() - 1; counter++) {
+        outputStreamDataSet10 << dist(engine) << ',';
+      }
+      outputStreamDataSet10 << dist(engine) << '\n';
+    }
+    integers.erase(integers.begin());
+    output_streams.erase(output_streams.begin());
   }
 
   return 0;

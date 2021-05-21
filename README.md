@@ -3,7 +3,7 @@
 [![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml)
 
 
-## Краткое описание семестрового проекта. Следует отразить информацию по следующим пунктам:_
+## Краткое описание семестрового проекта. Следует отразить информацию по следующим пунктам:
 
 - _Какая структура данных реализуется?_
 - _Что она из себя представляет (сбалансированное дерево, линейный список и пр.)?_

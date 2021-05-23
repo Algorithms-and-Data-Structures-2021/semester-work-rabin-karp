@@ -26,7 +26,7 @@ namespace itis {
       if (source_len == 0 || sub_len == 0) {
         return found_substring;
       }
-      size_t constexpr prime_q = (size_t(1) << 31) - 1; // it's (2^31 - 1)
+      size_t constexpr prime_q = (size_t(1) << 31) - 1;
       size_t const x = randSize(2, prime_q - 1);
 
       size_t sub_hash = 0;

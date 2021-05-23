@@ -15,9 +15,7 @@ static constexpr auto kDatasetPath = string_view{PROJECT_DATASET_DIR};
 
 // Возможно стоит подумать о том что данные в таблицу будут заноситься  другом порядке и изменить порядок обработки
 // папок (сначала прогнать все папки для 100, 500 и тд)
-string folders[10] = {"/01/",
-                      "/02/",
-                      "/03/",
+string folders[10] = {"/01/", "/02/", "/03/",
                       "/04/", "/05/", "/06/",
                       "/07/", "/08/", "/09/",
                       "/10/"};
@@ -29,7 +27,7 @@ int main() {
   string line;
   for (auto file : files) {
     for (auto folder : folders) {
-      for (int i = 0; i < 10; ++i) { // 10 раз прогоняем один и тот же csv файл
+      for (int i = 0; i < 5; ++i) { //прогоняем один и тот же csv файл(5 раз)
         auto input_file = ifstream(path + folder + file);
 
         string string_file;

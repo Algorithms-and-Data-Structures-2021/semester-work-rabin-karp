@@ -111,9 +111,13 @@ git clone https://github.com/Algorithms-and-Data-Structures-2021/semester-work-r
 ## Источники
 
 [Википедия](https://ru.wikipedia.org/wiki/Алгоритм_Рабина_—_Карпа)
+
 [Cтатья](https://medium.com/nuances-of-programming/алгоритм-рабина-карпа-с-полиномиальным-хешем-и-модульной-арифметикой-a2e2f86b2592)
+
 [Англоязычная статья об алгоритме](https://www.programiz.com/dsa/rabin-karp-algorithm)
+
 [Видео с подробным объяснением](https://www.youtube.com/watch?v=7k4UZDTnkqs)
+
 [Научная работа(реферат)](https://www.youtube.com/watch?v=7k4UZDTnkqs)
 
 

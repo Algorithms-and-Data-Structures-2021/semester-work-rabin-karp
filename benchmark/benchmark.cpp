@@ -5,7 +5,7 @@
 
 
 // подключаем вашу структуру данных
-#include "data_structure.hpp"
+#include "RabinKarp.hpp"
 
 using namespace std;
 using namespace itis;

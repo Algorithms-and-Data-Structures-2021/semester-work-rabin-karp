@@ -118,7 +118,7 @@ git clone https://github.com/Algorithms-and-Data-Structures-2021/semester-work-r
 
 [Видео с подробным объяснением](https://www.youtube.com/watch?v=7k4UZDTnkqs)
 
-[Научная работа(реферат)](https://www.youtube.com/watch?v=7k4UZDTnkqs)
+[Научная работа(реферат)](https://wreferat.baza-referat.ru/Алгоритм_Рабина-Карпа)
 
 
 
